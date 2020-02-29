@@ -2,8 +2,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
-* The DiceGame program implements an application that calculates how much 
-* time a microwave should run depending on the item and how many of said item.
+* The DiceGame program implements an application that generates a random 
+* number and evaluates if the user guesses it.
 *
 * @author  Bradley Wills
 * @version 1.0
@@ -17,7 +17,7 @@ public class DiceGame {
   static boolean correct;
   
   /**
-  * Calculates and outputs the amount of time depending on the item and how many of said item.
+  * Calculates and checks if the users input is the same as the guess.
   */
   
   public static void main(String[] args) {
@@ -36,10 +36,11 @@ public class DiceGame {
           correct = true;
           System.out.println("Correct! It took you " + guesses + " tries.");
         } else if ((userGuess < 1) || (userGuess > 6)) {
-          System.out.println("Invalid Input.");
+          System.out.println("Invalid Input. Your guess should be between 1 and 6");
         }
       }
     } catch (Exception e) {
+      // Informing the user that their input is invalid
       System.out.println("Invalid Input.");
     }
   }
